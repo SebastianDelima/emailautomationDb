@@ -1,0 +1,22 @@
+<%= form_with(model: visited, local: true) do |form| %>
+  <% if visited.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(visited.errors.count, "error") %> prohibited this visited from being saved:</h2>
+
+      <ul>
+        <% visited.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :times %>
+    <%= form.number_field :times %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

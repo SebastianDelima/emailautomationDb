@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Visiteds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Times</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visiteds.each do |visited| %>
+      <tr>
+        <td><%= visited.times %></td>
+        <td><%= link_to 'Show', visited %></td>
+        <td><%= link_to 'Edit', edit_visited_path(visited) %></td>
+        <td><%= link_to 'Destroy', visited, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Visited', new_visited_path %>
