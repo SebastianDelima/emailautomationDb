@@ -4,7 +4,8 @@ class VisitedsController < ApplicationController
   # GET /visiteds
   # GET /visiteds.json
   def index
-    @visiteds = Visited.all
+    visits = Visited.all
+    render :json => visits
   end
 
   # GET /visiteds/1
